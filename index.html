@@ -130,15 +130,9 @@
       transition: all 0.2s;
       cursor: pointer;
     }
-    .btn-primary {
-      background: var(--white);
-      color: var(--navy);
-    }
+    .btn-primary { background: var(--white); color: var(--navy); }
     .btn-primary:hover { background: var(--accent-dim); }
-    .btn-outline {
-      border: 1px solid rgba(255,255,255,0.4);
-      color: var(--white);
-    }
+    .btn-outline { border: 1px solid rgba(255,255,255,0.4); color: var(--white); }
     .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
 
     /* ── SECTIONS ── */
@@ -269,6 +263,12 @@
       border-radius: 2px;
       letter-spacing: 0.03em;
     }
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: auto;
+    }
     .card-link {
       font-size: 0.8rem;
       font-weight: 600;
@@ -283,6 +283,23 @@
     }
     .card-link:hover { color: var(--navy); }
     .card-link::after { content: '→'; }
+    .card-link.download::after { content: '↓'; }
+
+    /* Dashboard preview */
+    .dashboard-preview {
+      width: 100%;
+      border-radius: 3px;
+      border: 1px solid var(--rule);
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .preview-note {
+      font-size: 0.78rem;
+      color: var(--silver);
+      font-style: italic;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
 
     /* ── CONTACT ── */
     .contact-box {
@@ -343,7 +360,7 @@
     <p class="hero-sub">Graduate student specializing in Applied Data Analytics with a Healthcare concentration. Focused on turning health system data into decisions that matter.</p>
     <div class="hero-links">
       <a href="#projects" class="btn btn-primary">View Projects</a>
-      <a href="https://www.linkedin.com/in/williamklugh" target="_blank" class="btn btn-outline">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/williamklugh/" target="_blank" class="btn btn-outline">LinkedIn</a>
       <a href="William_Klugh_Resume.pdf" class="btn btn-outline">Resume</a>
     </div>
   </header>
@@ -363,14 +380,16 @@
         <ul class="skill-list">
           <li>SQL</li>
           <li>Python</li>
-          <li>SAS</li>
+          <li>R</li>
+          <li>SAS Enterprise Guide</li>
           <li>Microsoft Excel</li>
+          <li>Google BigQuery</li>
         </ul>
         <h4>Focus Areas</h4>
         <ul class="skill-list">
           <li>Healthcare data systems</li>
           <li>Operational analytics</li>
-          <li>Statistical modeling</li>
+          <li>Statistical modeling &amp; forecasting</li>
           <li>Data visualization</li>
         </ul>
       </div>
@@ -385,25 +404,82 @@
       <div class="section-rule"></div>
       <div class="project-grid">
 
-        <!-- PROJECT 1 PLACEHOLDER — replace with your real project -->
-        <div class="project-card placeholder">
+        <!-- PROJECT 1: CMS / SAS -->
+        <div class="project-card">
           <p class="card-category">Healthcare Analytics</p>
-          <h3 class="card-title">Project Title</h3>
-          <p class="card-desc">Brief description of what this project analyzed, what data was used, and what the key finding or output was.</p>
+          <h3 class="card-title">Exploring the Relationship Between Clinical Quality and Financial Performance in U.S. Hospitals</h3>
+          <p class="card-desc">An exploratory regression analysis using CMS data examining how clinical quality measures — including readmission rates, mortality, and ED wait times — relate to hospital financial performance and payer mix.</p>
           <div class="card-tags">
             <span class="tag">SAS Enterprise Guide</span>
             <span class="tag">CMS Data</span>
+            <span class="tag">Regression Analysis</span>
+          </div>
+          <div class="card-actions">
+            <a href="projects/cms-quality-financial/Exploring%20the%20Relationship%20Between%20Clinical%20Quality%20and%20Financial%20Performance%20in%20U.S.%20Hospitals.pdf" class="card-link">View Project</a>
           </div>
         </div>
 
-        <!-- MORE COMING SOON -->
-        <div class="project-card placeholder">
-          <p class="card-category">Coming Soon</p>
-          <h3 class="card-title">More Projects in Progress</h3>
-          <p class="card-desc">Additional projects from coursework and independent work will be added here as they are completed.</p>
+        <!-- PROJECT 2: Unemployment Forecasting -->
+        <div class="project-card">
+          <p class="card-category">Forecasting &amp; Time Series</p>
+          <h3 class="card-title">Forecasting the U.S. Monthly Unemployment Rate</h3>
+          <p class="card-desc">A time series analysis of U.S. unemployment data (2015–2025) using 12 individual and 4 ensemble forecasting models in R. The preferred ensemble model projects a modest upward drift from 4.3% toward 5.0% over 26 months.</p>
           <div class="card-tags">
-            <span class="tag">SAS</span>
+            <span class="tag">R</span>
+            <span class="tag">FRED Data</span>
+            <span class="tag">Time Series</span>
+            <span class="tag">Ensemble Modeling</span>
+          </div>
+          <div class="card-actions">
+            <a href="projects/unemployment-forecast/Forecasting_Unemployment_Rate.pdf" class="card-link">View Project</a>
+          </div>
+        </div>
+
+        <!-- PROJECT 3: Diabetic Data -->
+        <div class="project-card">
+          <p class="card-category">Healthcare Analytics</p>
+          <h3 class="card-title">Diabetic Data Predictive Analysis</h3>
+          <p class="card-desc">A predictive analysis of 30-day hospital readmission rates for diabetic patients using Excel. Regression models on discharge disposition and number of encounters outperformed age and medication as predictors.</p>
+          <div class="card-tags">
             <span class="tag">Excel</span>
+            <span class="tag">Regression Analysis</span>
+            <span class="tag">Readmission Prediction</span>
+          </div>
+          <div class="card-actions">
+            <a href="projects/diabetic-analysis/Predictive_Analysis_of_Diabetic_Data.pdf" class="card-link">View Project</a>
+          </div>
+        </div>
+
+        <!-- PROJECT 4: Medicare BigQuery -->
+        <div class="project-card">
+          <p class="card-category">Healthcare Analytics</p>
+          <h3 class="card-title">Medicare Data Analysis</h3>
+          <p class="card-desc">An exploratory analysis of Medicare data using Python in Google Colab and Google BigQuery. Key findings: a substantial gap exists between billed and paid amounts; urban hospitals receive higher payments than rural hospitals for the same procedures; and the relationship between procedure volume and payment is non-linear.</p>
+          <div class="card-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Google Colab</span>
+            <span class="tag">BigQuery</span>
+            <span class="tag">Medicare Data</span>
+          </div>
+          <div class="card-actions">
+            <a href="projects/medicare-analysis/Medicare_Analysis.ipynb" class="card-link">View Notebook</a>
+          </div>
+        </div>
+
+        <!-- PROJECT 5: Salary Dashboard -->
+        <div class="project-card">
+          <p class="card-category">Data Visualization</p>
+          <h3 class="card-title">Data Science Salary Calculator</h3>
+          <img src="projects/salary-dashboard/salary_dashboard_preview.png" alt="Data Science Salary Dashboard preview" class="dashboard-preview" />
+          <p class="card-desc">An interactive Excel dashboard for exploring data science salaries by job title, country, and employment type. Displays median salary, top job platform, and job count for any selected combination of filters.</p>
+          <p class="preview-note">Full interactivity requires opening in Excel. Download below.</p>
+          <div class="card-tags">
+            <span class="tag">Excel</span>
+            <span class="tag">Dashboard</span>
+            <span class="tag">Data Visualization</span>
+          </div>
+          <div class="card-actions">
+            <a href="projects/salary-dashboard/Salary_Dashboard.xlsx" class="card-link download">Download Excel File</a>
           </div>
         </div>
 
@@ -418,7 +494,7 @@
       <p>Open to entry-level data analyst opportunities in hospital and health system settings. Feel free to reach out.</p>
       <div class="contact-links">
         <a href="mailto:waklugh@icloud.com" class="btn btn-primary">Email Me</a>
-        <a href="https://www.linkedin.com/in/williamklugh" target="_blank" class="btn btn-outline">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/williamklugh/" target="_blank" class="btn btn-outline">LinkedIn</a>
         <a href="William_Klugh_Resume.pdf" class="btn btn-outline">Resume</a>
         <a href="https://github.com/William-Klugh" target="_blank" class="btn btn-outline">GitHub</a>
       </div>
