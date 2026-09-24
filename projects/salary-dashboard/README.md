@@ -1,0 +1,1 @@
+An interactive Excel dashboard for exploring data science salaries by job title, country, and employment type. Displays median salary, top job platform, and job count for any selected combination of filters.
