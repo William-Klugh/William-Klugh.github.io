@@ -1,0 +1,1 @@
+An exploratory analysis of Medicare data using Python in Google Colab and Google BigQuery. Key findings: a substantial gap exists between billed and paid amounts; urban hospitals receive higher payments than rural hospitals for the same procedures; and the relationship between procedure volume and payment is non-linear.
