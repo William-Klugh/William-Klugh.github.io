@@ -1,0 +1,1 @@
+An exploratory regression analysis using CMS data examining how clinical quality measures — including readmission rates, mortality, and ED wait times — relate to hospital financial performance and payer mix.
