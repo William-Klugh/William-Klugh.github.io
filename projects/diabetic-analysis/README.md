@@ -1,0 +1,1 @@
+A predictive analysis of 30-day hospital readmission rates for diabetic patients using Excel. Regression models on discharge disposition and number of encounters outperformed age and medication as predictors.
