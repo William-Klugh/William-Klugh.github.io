@@ -1,0 +1,1 @@
+A time series analysis of U.S. unemployment data (2015–2025) using 12 individual and 4 ensemble forecasting models in R. The preferred ensemble model projects a modest upward drift from 4.3% toward 5.0% over 26 months.
